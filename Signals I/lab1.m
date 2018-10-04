@@ -1,0 +1,76 @@
+% Christian Camilo Gaviria Castro - 1017229318
+% Steven Urrego Rodriguez - 1216719761
+% Juan Camilo Villegas - 1020440471
+
+clc,clearvars,clear workspace, close all
+
+Estudiante=('a. Steven urrego\nb. Camilo Villegas\nc. Christian Gaviria\n');
+disp('Seleccione el estudiante que desea analizar:')
+fprintf(Estudiante)
+Usuario=input(':','s');
+
+switch Usuario
+    case 'a' %Steven Urrego
+        Grabacion=('a. Con ruido\nb. Sin ruido\n');
+        disp('Seleccione como desea escuchar la grabación:')
+        fprintf(Grabacion)
+        Grabar=input(':','s');
+        
+        switch Grabar
+            case 'a'
+                Cuento=('a. La tortuga gigante\nb. Cisóforo el mago\n');
+                disp('Seleccione el cuento que desea analizar:')
+                fprintf(Cuento)
+                Analizar=input(':','s');
+                
+            case 'b'
+                Cuento=('a. La tortuga gigante\nb. Cisóforo el mago\n');
+                disp('Seleccione el cuento que desea analizar:')
+                fprintf(Cuento)
+                Analizar=input(':','s');
+                
+        end
+        
+    case 'b' %Camilo Villegas
+        Grabacion=('a. Con ruido\nb. Sin ruido\n');
+        disp('Seleccione como desea escuchar la grabación:')
+        fprintf(Grabacion)
+        Grabar=input(':','s');
+        
+        switch Grabar
+            case 'a'
+                Cuento=('a. La tortuga gigante\nb. Cisóforo el mago\n');
+                disp('Seleccione el cuento que desea analizar:')
+                fprintf(Cuento)
+                Analizar=input(':','s');
+                
+            case 'b'
+                Cuento=('a. La tortuga gigante\nb. Cisóforo el mago\n');
+                disp('Seleccione el cuento que desea analizar:')
+                fprintf(Cuento)
+                Analizar=input(':','s');
+        end
+        
+    case 'c' %Christian Gaviria
+        Grabacion=('a. Con ruido\nb. Sin ruido\n');
+        disp('Seleccione como desea escuchar la grabación:')
+        fprintf(Grabacion)
+        Grabar=input(':','s');
+        
+        switch Grabar
+            case 'a'
+                Cuento=('a. La tortuga gigante\nb. Cisóforo el mago\n');
+                disp('Seleccione el cuento que desea analizar:')
+                fprintf(Cuento)
+                Analizar=input(':','s');
+                
+            case 'b'
+                Cuento=('a. La tortuga gigante\nb. Cisóforo el mago\n');
+                disp('Seleccione el cuento que desea analizar:')
+                fprintf(Cuento)
+                Analizar=input(':','s');
+        end
+        
+    otherwise
+        disp('Estudiante no identificado, intente nuevamente.')
+end

@@ -1,0 +1,15 @@
+ t=linspace(0,3*sqrt(2),1000); %Primera función
+ x = cos(t) + sin(sqrt(2)*t);
+ plot(t,x)
+
+t=linspace(0,3*pi,1000);%Segunda función
+x = 0.5 - 0.5*(cos(2*t));
+plot(t,x)
+
+n=linspace(0,3*1.33,1000);%Tercera función
+x=cos((pi/3)*n)+sin((pi/4)*n);
+stem(n,x)
+
+n=linspace(0,3*0.125,100000);%Cuarta función
+x=0.5+0.5*(cos(pi/4)*n);
+stem(n,x)

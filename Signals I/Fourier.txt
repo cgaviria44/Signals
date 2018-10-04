@@ -1,0 +1,11 @@
+>> a=2;
+>> w=linspace(-30,30,1000);
+>> Xw=1./(a+1i*w);
+>> PSD=abs(Xw).^2;
+>> plot (w,PSD)
+>> axis tight; grid on
+>> xlabel '\omega';ylabel 'Power Spectral Density';
+>> line([-12.71*a -12.71*a],[0 .25], 'Color','red','LineStyle','--')
+>> line([12.71*a 12.71*a],[0 .25], 'Color','red','LineStyle','--')
+-------------------------------------------------------------------------------------------------------
+En algunas ocaciones es posible analizar señales con la transformada de Fourier en algunas restricciones 
