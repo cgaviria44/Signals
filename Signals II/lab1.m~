@@ -81,7 +81,7 @@ switch Usuario
                         
                         Max=max(M);
                         Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
+                        disp('Ingrese la resolución en [mV] que desea tener')
                         Delta=input(':');
                         B=log10((Max-Min)/Delta)/log10(2);
                         disp('número de bits necesarios para codificar la señal:')
@@ -100,11 +100,11 @@ switch Usuario
                         Fin=Fi*Fs;
                         
                         P=('a. Amplificar\nb. Atenuar\nc. No hacer nada\n');
-                        disp('Seleccione si desea amplificar o atenuar la señal:')
+                        disp('Desea amplificar o atenuar la señal?')
                         fprintf(P)
-                        Pregunta=input(':','s');
+                        Pregunta=input(':');
                         
-                        switch Pregunta
+                        switch Preguntar
                             case 'a' %Amplificar
                                 disp('Ingrese el parámetro de amplificación:')
                                 Amplificar=input(':');
@@ -118,7 +118,7 @@ switch Usuario
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
-                        disp('Seleccione si desea diezmar o interpolar la señal:')
+                        disp('Qué desea hacer?')
                         fprintf(Signal2)
                         Modificar2=input(':','s');
                         
@@ -143,7 +143,7 @@ switch Usuario
                         
                         Max=max(M);
                         Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
+                        disp('Ingrese la resolución en [mV] que desea tener')
                         Delta=input(':');
                         B=log10((Max-Min)/Delta)/log10(2);
                         disp('número de bits necesarios para codificar la señal:')
