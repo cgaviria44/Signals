@@ -51,7 +51,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -69,9 +68,7 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
-                        
                         
                     case 'b' %El Mago
                         [y,Fs]=audioread('jcamilo_ruido.mp3');
@@ -84,6 +81,7 @@ switch Usuario
                         Fi=input('');
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
+                        M=Mono(Inicio:Fin);
                         
                         Signal=('a. Amplificar\nb. Atenuar\nc. No hacer nada\n');
                         disp('Seleccione si desea amplificar o atenuar la señal:')
@@ -100,7 +98,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -118,9 +115,7 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
-                        
                 end
                 
             case 'b' %Sin ruido
@@ -157,7 +152,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -175,7 +169,6 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                     case 'b' %El Mago
@@ -189,6 +182,7 @@ switch Usuario
                         Fi=input('');
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
+                        M=Mono(Inicio:Fin);
                         
                         Signal=('a. Amplificar\nb. Atenuar\nc. No hacer nada\n');
                         disp('Seleccione si desea amplificar o atenuar la señal:')
@@ -205,7 +199,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -225,7 +218,6 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                 end
         end
@@ -271,7 +263,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -289,7 +280,6 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                     case 'b' %El Mago
@@ -302,6 +292,7 @@ switch Usuario
                         Fi=input('');
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
+                        M=Mono(Inicio:Fin);
                         
                         Signal=('a. Amplificar\nb. Atenuar\nc. No hacer nada\n');
                         disp('Seleccione si desea amplificar o atenuar la señal:')
@@ -318,7 +309,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -331,14 +321,11 @@ switch Usuario
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
                                 M=decimate(M,Diez);
-                                %song = audioplayer(M,Fs);
-                                %play(song)
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                 end
                 
@@ -376,7 +363,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -394,7 +380,6 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                     case 'b' %El Mago
@@ -408,6 +393,7 @@ switch Usuario
                         Fi=input('');
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
+                        M=Mono(Inicio:Fin);
                         
                         Signal=('a. Amplificar\nb. Atenuar\nc. No hacer nada\n');
                         disp('Seleccione si desea amplificar o atenuar la señal:')
@@ -424,7 +410,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -442,7 +427,6 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                 end
         end
@@ -489,7 +473,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -507,7 +490,6 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                     case 'b' %El Mago
@@ -520,6 +502,7 @@ switch Usuario
                         Fi=input('');
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
+                        M=Mono(Inicio:Fin);
                         
                         Signal=('a. Amplificar\nb. Atenuar\nc. No hacer nada\n');
                         disp('Seleccione si desea amplificar o atenuar la señal:')
@@ -536,7 +519,7 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
+                                
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -554,7 +537,6 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                 end
                 
@@ -592,7 +574,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -610,7 +591,6 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                     case 'b' %El Mago
@@ -623,6 +603,7 @@ switch Usuario
                         Fi=input('');
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
+                        M=Mono(Inicio:Fin);
                         
                         Signal=('a. Amplificar\nb. Atenuar\nc. No hacer nada\n');
                         disp('Seleccione si desea amplificar o atenuar la señal:')
@@ -639,7 +620,6 @@ switch Usuario
                                 Atenuar=input(':');
                                 M=Mono(Inicio:Fin)/Atenuar;
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                         
                         Signal2=('a. Diezmar\nb. Interpolar\nc. No hacer nada\n');
@@ -657,7 +637,6 @@ switch Usuario
                                 Inter=input('');
                                 M=interp(M,Inter);
                             case 'c' %No hacer nada
-                                M=Mono(Inicio:Fin);
                         end
                 end
         end
@@ -666,19 +645,19 @@ switch Usuario
         disp('Estudiante no identificado, intente nuevamente.')
 end
 
-Grafica=('a. En frecuencia analógica\nb. En frecuencia digital\nc. En frecuencia normalizada\n');
-disp('Eliga como desea observar la gráfica:')
-fprintf(Grafica)
-funcion=input(':','s');
-
-switch funcion
-    case 'a'
-        disp('gonorrea hpta')
-end
-
-subplot(212)
-plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-xlabel '\omega [Rad]', ylabel 'ESD'
+% Grafica=('a. En frecuencia analógica\nb. En frecuencia digital\nc. En frecuencia normalizada\n');
+% disp('Eliga como desea observar la gráfica:')
+% fprintf(Grafica)
+% funcion=input(':','s');
+%
+% switch funcion
+%     case 'a'
+%         disp('gonorrea hpta')
+%     case 'b'
+%     case 'c'
+%     otherwise
+%         disp('Estudiante no identificado, intente nuevamente.')
+% end
 
 Max=max(M);
 Min=min(M);
@@ -699,7 +678,7 @@ Muestras=length(Mf);
 k=0:Muestras-1;
 subplot(212)
 plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-xlabel 'Frecuencia [Rad]', ylabel 'ESD'
+xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD'
 
 song = audioplayer(M,Fs);
 play(song)
