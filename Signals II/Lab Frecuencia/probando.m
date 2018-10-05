@@ -63,46 +63,15 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
                         
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Voltios [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        
-                        Grafica=('a. En frecuencia analógica\nb. En frecuencia digital\nc. En frecuencia normalizada\n');
-                        disp('Eliga como desea observar la gráfica:')
-                        fprintf(Grafica)
-                        funcion=input(':','s');
-                        
-                        switch funcion
-                            case 'a'
-                                disp('gonorrea hpta')
-                        end
-                        
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel '\omega [Rad]', ylabel 'ESD'
                         
                     case 'b' %El Mago
                         [y,Fs]=audioread('jcamilo_ruido.mp3');
@@ -143,40 +112,15 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
-                                %song = audioplayer(M,Fs);
-                                %play(song)
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
                         
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel 'Frecuencia [Rad]', ylabel 'ESD'
-                        
-                        song = audioplayer(M,Fs);
-                        play(song)
                 end
                 
             case 'b' %Sin ruido
@@ -225,35 +169,14 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Voltios [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel '\omega [Rad]', ylabel 'ESD'
                         
                     case 'b' %El Mago
                         [y,Fs]=audioread('jcamilo_ruido.mp3');
@@ -294,40 +217,16 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
+                                M=decimate(M,Diez);
                                 %song = audioplayer(M,Fs);
                                 %play(song)
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel 'Frecuencia [Rad]', ylabel 'ESD'
-                        
-                        song = audioplayer(M,Fs);
-                        play(song)
                 end
         end
         
@@ -384,35 +283,14 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Voltios [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel '\omega [Rad]', ylabel 'ESD'
                         
                     case 'b' %El Mago
                         [y,Fs]=audioread('jcamilo_ruido.mp3');
@@ -452,40 +330,16 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
+                                M=decimate(M,Diez);
                                 %song = audioplayer(M,Fs);
                                 %play(song)
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel 'Frecuencia [Rad]', ylabel 'ESD'
-                        
-                        song = audioplayer(M,Fs);
-                        play(song)
                 end
                 
             case 'b' %Sin ruido
@@ -534,35 +388,14 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Voltios [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel '\omega [Rad]', ylabel 'ESD'
                         
                     case 'b' %El Mago
                         [y,Fs]=audioread('jcamilo_ruido.mp3');
@@ -603,40 +436,14 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
-                                %song = audioplayer(M,Fs);
-                                %play(song)
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel 'Frecuencia [Rad]', ylabel 'ESD'
-                        
-                        song = audioplayer(M,Fs);
-                        play(song)
                 end
         end
         
@@ -694,35 +501,14 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Voltios [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel '\omega [Rad]', ylabel 'ESD'
                         
                     case 'b' %El Mago
                         [y,Fs]=audioread('jcamilo_ruido.mp3');
@@ -762,40 +548,14 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
-                                %song = audioplayer(M,Fs);
-                                %play(song)
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel 'Frecuencia [Rad]', ylabel 'ESD'
-                        
-                        song = audioplayer(M,Fs);
-                        play(song)
                 end
                 
             case 'b' %Sin ruido
@@ -844,35 +604,14 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Voltios [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel '\omega [Rad]', ylabel 'ESD'
                         
                     case 'b' %El Mago
                         [y,Fs]=audioread('jcamilo_ruido.mp3');
@@ -912,43 +651,55 @@ switch Usuario
                             case 'a' %Diezmar
                                 disp('Ingrese el parámetro de diezmado:')
                                 Diez=input('');
-                                X=decimate(M,Diez);
-                                %song = audioplayer(M,Fs);
-                                %play(song)
+                                M=decimate(M,Diez);
                             case 'b' %Interpolar
                                 disp('Ingrese el parámetro de interpolación:')
                                 Inter=input('');
-                                X=interp(M,Inter);
+                                M=interp(M,Inter);
                             case 'c' %No hacer nada
                                 M=Mono(Inicio:Fin);
                         end
-                        
-                        Max=max(M);
-                        Min=min(M);
-                        disp('Ingrese la resolución en [mV] que desea tener:')
-                        Delta=input(':');
-                        Bit=log10((Max-Min)/Delta)/log10(2);
-                        disp('número de bits necesarios para codificar la señal:')
-                        Bits=ceil(Bit)
-                        
-                        L=length(M);
-                        t=linspace(Inicio/Fs,Fin/Fs,L);
-                        subplot(211)
-                        plot(t./60,M), axis tight, grid on
-                        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
-                        
-                        Mf=fft(M);
-                        Muestras=length(Mf);
-                        k=0:Muestras-1;
-                        subplot(212)
-                        plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
-                        xlabel 'Frecuencia [Rad]', ylabel 'ESD'
-                        
-                        song = audioplayer(M,Fs);
-                        play(song)
                 end
         end
         
     otherwise
         disp('Estudiante no identificado, intente nuevamente.')
 end
+
+Grafica=('a. En frecuencia analógica\nb. En frecuencia digital\nc. En frecuencia normalizada\n');
+disp('Eliga como desea observar la gráfica:')
+fprintf(Grafica)
+funcion=input(':','s');
+
+switch funcion
+    case 'a'
+        disp('gonorrea hpta')
+end
+
+subplot(212)
+plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
+xlabel '\omega [Rad]', ylabel 'ESD'
+
+Max=max(M);
+Min=min(M);
+disp('Ingrese la resolución en [mV] que desea tener:')
+Delta=input(':');
+Bit=log10((Max-Min)/Delta)/log10(2);
+disp('número de bits necesarios para codificar la señal:')
+Bits=ceil(Bit)
+
+L=length(M);
+t=linspace(Inicio/Fs,Fin/Fs,L);
+subplot(211)
+plot(t./60,M), axis tight, grid on
+xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
+
+Mf=fft(M);
+Muestras=length(Mf);
+k=0:Muestras-1;
+subplot(212)
+plot(2*pi*k/Muestras,(abs(Mf).^2)), axis tight, grid on
+xlabel 'Frecuencia [Rad]', ylabel 'ESD'
+
+song = audioplayer(M,Fs);
+play(song)
