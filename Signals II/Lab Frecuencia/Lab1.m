@@ -48,6 +48,9 @@ switch Usuario
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
                         M=Mono(Inicio:Fin);
+                        
+                    otherwise
+                        disp('Cuento no identificado, intente nuevamente.')
                 end
                 
             case 'b' %Sin ruido
@@ -81,7 +84,13 @@ switch Usuario
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
                         M=Mono(Inicio:Fin);
+                        
+                    otherwise
+                        disp('Cuento no identificado, intente nuevamente.')
                 end
+                
+            otherwise
+                disp('Audio no identificado, intente nuevamente.')
         end
         
     case 'b' %Camilo Villegas
@@ -121,6 +130,9 @@ switch Usuario
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
                         M=Mono(Inicio:Fin);
+                        
+                    otherwise
+                        disp('Cuento no identificado, intente nuevamente.')
                 end
                 
             case 'b' %Sin ruido
@@ -154,7 +166,13 @@ switch Usuario
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
                         M=Mono(Inicio:Fin);
+                        
+                    otherwise
+                        disp('Cuento no identificado, intente nuevamente.')
                 end
+                
+            otherwise
+                disp('Estudiante no identificado, intente nuevamente.')
         end
         
     case 'c' %Christian Gaviria
@@ -195,6 +213,9 @@ switch Usuario
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
                         M=Mono(Inicio:Fin);
+                        
+                    otherwise
+                        disp('Cuento no identificado, intente nuevamente.')
                 end
                 
             case 'b' %Sin ruido
@@ -227,7 +248,13 @@ switch Usuario
                         Inicio=In*Fs;
                         Fin=Fi*Fs;
                         M=Mono(Inicio:Fin);
+                        
+                    otherwise
+                        disp('Cuento no identificado, intente nuevamente.')
                 end
+                
+            otherwise
+                disp('Audio no identificado, intente nuevamente.')
         end
         
     otherwise
@@ -272,7 +299,7 @@ Max=max(M);
 Min=min(M);
 disp('Ingrese la resolución en [mV] que desea tener:')
 Delta=input(':');
-Bit=log10((Max-Min)/Delta)/log10(2);
+Bit=20*log10((Max-Min)/Delta)/log10(2);
 disp('número de bits necesarios para codificar la señal:')
 Bits=ceil(Bit)
 
@@ -300,7 +327,7 @@ xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal anal
 
 subplot(212)
 plot(z,(abs(Mf).^2)), axis tight, grid on
-xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD', title 'Intervalo de la señal analizada'
+xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD [dB]', title 'Intervalo de la señal analizada'
 
 song = audioplayer(M,Fs);
 play(song)
