@@ -309,7 +309,7 @@ k=0:Muestras-1;
 L=length(M);
 t=linspace(Inicio/Fs,Fin/Fs,L);
 
-Grafica=('a. En frecuencia analógica\nb. En frecuencia digital o normalizada: ');
+Grafica=('a. En frecuencia analógica\nb. En frecuencia digital o normalizada\n');
 disp('Eliga como desea observar la gráfica:')
 fprintf(Grafica)
 funcion=input(':','s');
