@@ -299,7 +299,7 @@ Max=max(M);
 Min=min(M);
 disp('Ingrese la resolución en [mV] que desea tener:')
 Delta=input(':');
-Bit=20*log10((Max-Min)/Delta)/log10(2);
+Bit=log10((Max-Min)/Delta)/log10(2);
 disp('número de bits necesarios para codificar la señal:')
 Bits=ceil(Bit)
 
@@ -309,14 +309,14 @@ k=0:Muestras-1;
 L=length(M);
 t=linspace(Inicio/Fs,Fin/Fs,L);
 
-Grafica=('a. En frecuencia analógica\nb. En frecuencia digital\nc. En frecuencia normalizada\n');
+Grafica=('a. En frecuencia analógica\nb. En frecuencia digital o normalizada: ');
 disp('Eliga como desea observar la gráfica:')
 fprintf(Grafica)
 funcion=input(':','s');
 
 switch funcion
     case 'a'
-        z=Fs*Muestras;
+        z=Fs*k/Muestras;
     case 'b'
         z=2*pi*k/Muestras;
 end
@@ -326,8 +326,8 @@ plot(t./60,M), axis tight, grid on
 xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
 
 subplot(212)
-plot(z,(abs(Mf).^2)), axis tight, grid on
-xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD [dB]', title 'Intervalo de la señal analizada'
+plot(z,(20*log10(abs(Mf).^2))), axis tight, grid on
+xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD [dB]', title 'Espectro de Fourier'
 
 song = audioplayer(M,Fs);
 play(song)
