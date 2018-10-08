@@ -29,11 +29,11 @@ switch Usuario
                         Mono=sum(y,2)/size(y,2);
                         disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-554 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
@@ -42,11 +42,11 @@ switch Usuario
                         Tiempo=size(Mono,1)/Fs;
                         disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 555-725 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     otherwise
@@ -65,11 +65,11 @@ switch Usuario
                         Mono=sum(y,2)/size(y,2);
                         disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-554 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
@@ -78,11 +78,11 @@ switch Usuario
                         Tiempo=size(Mono,1)/Fs;
                         disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 555-725 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     otherwise
@@ -112,11 +112,11 @@ switch Usuario
                         Mono=sum(y,2)/size(y,2);
                         disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-553 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
@@ -124,11 +124,11 @@ switch Usuario
                         Mono=sum(y,2)/size(y,2);
                         disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 554-725 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     otherwise
@@ -147,11 +147,11 @@ switch Usuario
                         Mono=sum(y,2)/size(y,2);
                         disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-573 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
@@ -160,11 +160,11 @@ switch Usuario
                         Tiempo=size(Mono,1)/Fs;
                         disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 574-753 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     otherwise
@@ -195,11 +195,11 @@ switch Usuario
                         Tiempo=size(Mono,1)/Fs;
                         disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-554 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
@@ -207,11 +207,11 @@ switch Usuario
                         Mono=sum(y,2)/size(y,2);
                         disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 555-725 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     otherwise
@@ -230,11 +230,11 @@ switch Usuario
                         Mono=sum(y,2)/size(y,2);
                         disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-554 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
@@ -242,11 +242,11 @@ switch Usuario
                         Mono=sum(y,2)/size(y,2);
                         disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 555-725 s):')
                         disp('Tiempo inicial:')
-                        In=input('');
+                        Start=input('');
                         disp('Tiempo final:')
-                        Fi=input('');
-                        Inicio=In*Fs;
-                        Fin=Fi*Fs;
+                        End=input('');
+                        Inicio=Start*Fs;
+                        Fin=End*Fs;
                         M=Mono(Inicio:Fin);
                         
                     otherwise
@@ -271,10 +271,12 @@ switch Preguntar
         disp('Ingrese el parámetro de amplificación:')
         Amplificar=input(':');
         M=Amplificar*Mono(Inicio:Fin);
+        
     case 'b' %Atenuar
         disp('Ingrese el parámetro de atenuación:')
         Atenuar=input(':');
         M=Mono(Inicio:Fin)/Atenuar;
+        
     case 'c' %No hacer nada
 end
 
@@ -288,10 +290,12 @@ switch Preguntar2
         disp('Ingrese el parámetro de diezmado:')
         Diez=input('');
         M=decimate(M,Diez);
+        
     case 'b' %Interpolar
         disp('Ingrese el parámetro de interpolación:')
         Inter=input('');
         M=interp(M,Inter);
+        
     case 'c' %No hacer nada
 end
 
@@ -310,24 +314,29 @@ L=length(M);
 t=linspace(Inicio/Fs,Fin/Fs,L);
 
 Grafica=('a. En frecuencia analógica\nb. En frecuencia digital o normalizada\n');
-disp('Eliga como desea observar la gráfica:')
+disp('Seleccione como desea observar la gráfica:')
 fprintf(Grafica)
 funcion=input(':','s');
 
 switch funcion
     case 'a'
-        z=Fs*k/Muestras;
+        Frec=Fs*k/Muestras;
+        subplot(211)
+        plot(t./60,M), axis tight, grid on
+        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
+        subplot(212)
+        plot(Frec,(20*log10(abs(Mf).^2))), axis tight, grid on
+        xlabel 'Frecuencia [Hz]', ylabel 'ESD [dB]', title 'Espectro de Fourier'
+        
     case 'b'
-        z=2*pi*k/Muestras;
+        Frec=2*pi*k/Muestras;
+        subplot(211)
+        plot(t./60,M), axis tight, grid on
+        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
+        subplot(212)
+        plot(Frec,(20*log10(abs(Mf).^2))), axis tight, grid on
+        xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD [dB]', title 'Espectro de Fourier'
 end
-
-subplot(211)
-plot(t./60,M), axis tight, grid on
-xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
-
-subplot(212)
-plot(z,(20*log10(abs(Mf).^2))), axis tight, grid on
-xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD [dB]', title 'Espectro de Fourier'
 
 song = audioplayer(M,Fs);
 play(song)
