@@ -25,9 +25,9 @@ switch Usuario
                 
                 switch Analizar
                     case 'a' %La Tortuga gigante
-                        [y,Fs]=audioread('jcamilo_ruido.mp3');
+                        [y,Fs]=audioread('surrego_ruido.mp3');
                         Mono=sum(y,2)/size(y,2);
-                        disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-554 s):')
+                        disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-642 s):')
                         disp('Tiempo inicial:')
                         Start=input('');
                         disp('Tiempo final:')
@@ -37,10 +37,10 @@ switch Usuario
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
-                        [y,Fs]=audioread('jcamilo_ruido.mp3');
+                        [y,Fs]=audioread('surrego_ruido.mp3');
                         Mono=sum(y,2)/size(y,2);
                         Tiempo=size(Mono,1)/Fs;
-                        disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 555-725 s):')
+                        disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 643-856 s):')
                         disp('Tiempo inicial:')
                         Start=input('');
                         disp('Tiempo final:')
@@ -61,9 +61,9 @@ switch Usuario
                 
                 switch Analizar
                     case 'a' %La Tortuga gigante
-                        [y,Fs]=audioread('jcamilo_ruido.mp3');
+                        [y,Fs]=audioread('surrego.mp3');
                         Mono=sum(y,2)/size(y,2);
-                        disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-554 s):')
+                        disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-610 s):')
                         disp('Tiempo inicial:')
                         Start=input('');
                         disp('Tiempo final:')
@@ -73,10 +73,10 @@ switch Usuario
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
-                        [y,Fs]=audioread('jcamilo_ruido.mp3');
+                        [y,Fs]=audioread('surrego.mp3');
                         Mono=sum(y,2)/size(y,2);
                         Tiempo=size(Mono,1)/Fs;
-                        disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 555-725 s):')
+                        disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 611-812 s):')
                         disp('Tiempo inicial:')
                         Start=input('');
                         disp('Tiempo final:')
@@ -190,10 +190,10 @@ switch Usuario
                 
                 switch Analizar
                     case 'a' %La Tortuga gigante
-                        [y,Fs]=audioread('jcamilo_ruido.mp3');
+                        [y,Fs]=audioread('cgaviria_ruido.mp3');
                         Mono=sum(y,2)/size(y,2);
                         Tiempo=size(Mono,1)/Fs;
-                        disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-554 s):')
+                        disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-641 s):')
                         disp('Tiempo inicial:')
                         Start=input('');
                         disp('Tiempo final:')
@@ -203,9 +203,9 @@ switch Usuario
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
-                        [y,Fs]=audioread('jcamilo_ruido.mp3');
+                        [y,Fs]=audioread('cgaviria_ruido.mp3');
                         Mono=sum(y,2)/size(y,2);
-                        disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 555-725 s):')
+                        disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 642-866 s):')
                         disp('Tiempo inicial:')
                         Start=input('');
                         disp('Tiempo final:')
@@ -226,9 +226,9 @@ switch Usuario
                 
                 switch Analizar
                     case 'a' %La Tortuga gigante
-                        [y,Fs]=audioread('jcamilo_ruido.mp3');
+                        [y,Fs]=audioread('cgaviria.mp3');
                         Mono=sum(y,2)/size(y,2);
-                        disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-554 s):')
+                        disp('Seleccione el rango de tiempo en el que desea analizar (Rango disponible: 1-600 s):')
                         disp('Tiempo inicial:')
                         Start=input('');
                         disp('Tiempo final:')
@@ -238,9 +238,9 @@ switch Usuario
                         M=Mono(Inicio:Fin);
                         
                     case 'b' %Cisóforo el Mago
-                        [y,Fs]=audioread('jcamilo_ruido.mp3');
+                        [y,Fs]=audioread('cgaviria.mp3');
                         Mono=sum(y,2)/size(y,2);
-                        disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 555-725 s):')
+                        disp('Seleccione el rango de tiempo en la que desea analizar (Rango disponible: 601-796 s):')
                         disp('Tiempo inicial:')
                         Start=input('');
                         disp('Tiempo final:')
@@ -303,29 +303,30 @@ Max=max(M);
 Min=min(M);
 disp('Ingrese la resolución en [mV] que desea tener:')
 Delta=input(':');
-Bit=log10((Max-Min)/Delta)/log10(2);
+Bit=log10((Max-Min)/(Delta/1000))/log10(2);
 disp('número de bits necesarios para codificar la señal:')
 Bits=ceil(Bit)
 
 Mf=fft(M);
 Muestras=length(Mf);
-k=0:Muestras-1;
+Mf=Mf(1:(Muestras)/2);
+k=0:Muestras/2-1;
 L=length(M);
 t=linspace(Inicio/Fs,Fin/Fs,L);
 
-Grafica=('a. En frecuencia analógica\nb. En frecuencia digital o normalizada\n');
+Grafica=('a. En frecuencia analógica\nb. En frecuencia digital\nc. En frecuencia normalizada\n');
 disp('Seleccione como desea observar la gráfica:')
 fprintf(Grafica)
 funcion=input(':','s');
 
 switch funcion
     case 'a'
-        Frec=Fs*k/Muestras;
+        Frec=Fs*k/Muestras;s
         subplot(211)
         plot(t./60,M), axis tight, grid on
         xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
         subplot(212)
-        plot(Frec,(20*log10(abs(Mf).^2))), axis tight, grid on
+        plot(Frec,(10*log10(abs(Mf).^2))), axis tight, grid on
         xlabel 'Frecuencia [Hz]', ylabel 'ESD [dB]', title 'Espectro de Fourier'
         
     case 'b'
@@ -334,8 +335,17 @@ switch funcion
         plot(t./60,M), axis tight, grid on
         xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
         subplot(212)
-        plot(Frec,(20*log10(abs(Mf).^2))), axis tight, grid on
+        plot(Frec,(10*log10(abs(Mf).^2))), axis tight, grid on
         xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD [dB]', title 'Espectro de Fourier'
+        
+    case 'c'
+        Frec=k/Muestras;
+        subplot(211)
+        plot(t./60,M), axis tight, grid on
+        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
+        subplot(212)
+        plot(Frec,(10*log10(abs(Mf).^2))/2), axis tight, grid on
+        xlabel 'Ciclos/Muestras', ylabel 'ESD [dB]', title 'Espectro de Fourier'
 end
 
 song = audioplayer(M,Fs);
