@@ -301,7 +301,7 @@ end
 
 Max=max(M);
 Min=min(M);
-disp('Ingrese la resolución en [mV] que desea tener:')
+disp('Ingrese la resolución en [V] que desea tener:')
 Delta=input(':');
 Bit=log10((Max-Min)/(Delta/1000))/log10(2);
 disp('número de bits necesarios para codificar la señal:')
@@ -321,31 +321,31 @@ funcion=input(':','s');
 
 switch funcion
     case 'a'
-        Frec=Fs*k/Muestras;s
+        Frec=Fs*k/Muestras;
         subplot(211)
         plot(t./60,M), axis tight, grid on
-        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
+        xlabel 'Tiempo [min]', ylabel 'Amplitud [V]', title 'Intervalo de la señal analizada'
         subplot(212)
         plot(Frec,(10*log10(abs(Mf).^2))), axis tight, grid on
-        xlabel 'Frecuencia [Hz]', ylabel 'ESD [dB]', title 'Espectro de Fourier'
+        xlabel 'Frecuencia [Hz]', ylabel 'ESD [dB]', title 'Espectro de la señal analizada en función de la frecuencia analógica'
         
     case 'b'
         Frec=2*pi*k/Muestras;
         subplot(211)
         plot(t./60,M), axis tight, grid on
-        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
+        xlabel 'Tiempo [min]', ylabel 'Amplitud [V]', title 'Intervalo de la señal analizada'
         subplot(212)
         plot(Frec,(10*log10(abs(Mf).^2))), axis tight, grid on
-        xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD [dB]', title 'Espectro de Fourier'
+        xlabel 'Frecuencia \omega [Rad]', ylabel 'ESD [dB]', title 'Espectro de la señal analizada en función de la frecuencia digital'
         
     case 'c'
         Frec=k/Muestras;
         subplot(211)
         plot(t./60,M), axis tight, grid on
-        xlabel 'Tiempo [min]', ylabel 'Amplitud [v]', title 'Intervalo de la señal analizada'
+        xlabel 'Tiempo [min]', ylabel 'Amplitud [V]', title 'Intervalo de la señal analizada'
         subplot(212)
-        plot(Frec,(10*log10(abs(Mf).^2))/2), axis tight, grid on
-        xlabel 'Ciclos/Muestras', ylabel 'ESD [dB]', title 'Espectro de Fourier'
+        plot(Frec,(10*log10(abs(Mf).^2))), axis tight, grid on
+        xlabel 'Ciclos/Muestras', ylabel 'ESD [dB]', title 'Espectro de la señal analizada en función de la frecuencia normalizada'
 end
 
 song = audioplayer(M,Fs);
